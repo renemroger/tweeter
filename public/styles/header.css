@@ -1,0 +1,21 @@
+
+header{
+  position: relative;
+  padding-top: 1.5em;
+  height: 400px;
+  width: 100%;
+  background-color: #d89820;
+  background-image: url('../images/cardboard.png')
+}
+
+h2.center{
+  position: relative;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+img.center{
+  position: relative;
+  left: 50%;
+  margin-left: -128px;
+}

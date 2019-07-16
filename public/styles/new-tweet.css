@@ -1,0 +1,43 @@
+.new-tweet{
+
+  background-color: antiquewhite;
+  padding-bottom: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #545149;
+}
+
+.StickyTweet{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 120px;
+  background-color: #cae8ca;
+}
+
+.button{
+  border: none;
+  background-color: blue;
+  font-family: 'Bungee',sans-serif;
+  color: #FFF;
+}
+
+.counter{
+  font-family: 'Bungee',sans-serif;
+  float: right;
+}
+
+.form-container{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+textarea{
+  width: 100%;
+  resize: none;
+  border: none;
+  border-bottom: 4px solid;
+  border-color: #000;
+  background-color: antiquewhite;
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

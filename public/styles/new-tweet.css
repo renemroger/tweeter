@@ -1,12 +1,11 @@
 .new-tweet{
-
   background-color: antiquewhite;
   padding-bottom: 1em;
   font-family: 'Source Sans Pro', sans-serif;
   color: #545149;
 }
 
-.StickyTweet{
+.stickyTweet{
   position: -webkit-sticky;
   position: sticky;
   top: 120px;

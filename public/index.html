@@ -7,6 +7,7 @@
 
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
   <!-- Bungee/Source Sans Pro font -->
   <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap"
@@ -18,6 +19,7 @@
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
@@ -33,7 +35,7 @@
     <span>tweeter</span>
   </nav>
   <div class="container">
-    <header>
+    <header class='mainHeader'>
       <div>
         <img class="center" src="/images/profile-hex.png">
       </div>
@@ -45,18 +47,24 @@
 
     <!-- Page-specific (main) content here -->
     <main>
-      <div class="StickyTweet">
-        <section class="new-tweet">
-          <h2>Compose Tweet</h2>
-          <div class="form-container">
-            <form method="POST" action="/tweets">
-              <textarea name="text" placeholder="What are you humming about?"></textarea>
-              <input class="button" type="submit" value="Tweet">
-              <span class="counter">140</span>
-            </form>
-          </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="./scripts/composer-char-counter.js"></script>
+      <script src="./scripts/tweetContainer.js"></script>
+
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <div class="form-container">
+          <form method="POST" action="/tweets">
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+            <input class="button" type="submit" value="Tweet">
+            <span class="counter"></span>
+          </form>
+        </div>
+
+        <section class="tweets-container">
+
         </section>
-      </div>
+      </section>
 
       <div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit
@@ -110,82 +118,7 @@
           magnam
           dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
           Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates
-          possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere repellendus deleniti
-          mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae
-          officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem
-          ipsum
-          dolor sit amet consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere
-          repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum
-          natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius,
-          nobis
-          praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi
-          iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed
-          nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores
-          nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat, molestias quibusdam
-          ipsam.
-          Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit quia
-          molestias
-          sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla
-          provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda.
-          Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat,
-          molestias
-          quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          suscipit quia molestias sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor
-          expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Labore,
-          tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus
-          dicta
-          fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Vitae suscipit quia molestias sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut,
-          magnam
-          dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates
-          possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere repellendus deleniti
-          mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae
-          officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem
-          ipsum
-          dolor sit amet consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere
-          repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum
-          natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius,
-          nobis
-          praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi
-          iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed
-          nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores
-          nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat, molestias quibusdam
-          ipsam.
-          Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae suscipit quia
-          molestias
-          sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla
-          provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda.
-          Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat,
-          molestias
-          quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          suscipit quia molestias sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut, magnam dolor
-          expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Labore,
-          tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates possimus
-          dicta
-          fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Vitae suscipit quia molestias sint! Modi iusto non facere repellendus deleniti mollitia, omnis ut,
-          magnam
-          dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae officiis iusto voluptates
-          possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere repellendus deleniti
-          mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum natus, voluptatum vitae
-          officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius, nobis praesentium? Lorem
-          ipsum
-          dolor sit amet consectetur adipisicing elit. Vitae suscipit quia molestias sint! Modi iusto non facere
-          repellendus deleniti mollitia, omnis ut, magnam dolor expedita eveniet nulla provident, sed nesciunt. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Labore, tenetur assumenda. Sunt asperiores nam, nostrum
-          natus, voluptatum vitae officiis iusto voluptates possimus dicta fugiat, molestias quibusdam ipsam. Eius,
+          possimus dicta fug
           nobis
           praesentium? </p>
       </div>

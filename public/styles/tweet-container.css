@@ -1,7 +1,6 @@
 .floatRight{
   float: right;
 }
-
 .hoverToggle{
   visibility:hidden;
 }
@@ -29,6 +28,10 @@
   -webkit-box-shadow: 12px 12px 2px 0px rgba(83,65,219,0.59);
   -moz-box-shadow: 12px 12px 2px 0px rgba(83,65,219,0.59);
   box-shadow: 12px 12px 2px 0px rgba(83,65,219,0.59);
+}
+
+.tweet:hover .hoverToggle{
+  visibility:visible;
 }
 
 .tweet-text{

@@ -5,14 +5,22 @@
   color: #545149;
 }
 
-.stickyTweet{
-  position: -webkit-sticky;
-  position: sticky;
-  top: 120px;
-  background-color: #cae8ca;
+.new-tweet h2{
+  font-family: 'Bungee',sans-serif;
 }
 
-.button{
+.stickyTweet{
+  margin-top: 10px;
+  z-index: 1000;
+  position: -webkit-sticky;
+  position: sticky;
+  padding: 15px 10px;
+  top: 120px;
+  border: 4px solid;
+  background-color: antiquewhite;
+}
+
+.submit-post-button{
   border: none;
   background-color: blue;
   font-family: 'Bungee',sans-serif;

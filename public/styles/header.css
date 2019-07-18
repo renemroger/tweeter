@@ -4,14 +4,35 @@
   padding-top: 1.5em;
   height: 400px;
   width: 100%;
+  font-family: 'Bungee',sans-serif;
+  font-size: 24px;
   background-color: #d89820;
   background-image: url('../images/cardboard.png');
+}
+
+.glyphicon-menu-down{
+  position: relative;
+  display: inline;
+  left: -50%;
+}
+
+.toggleTweetBox{
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
 }
 
 h2.center{
   position: relative;
   margin-top: 0.5em;
   text-align: center;
+}
+
+.red {
+  color:red;
 }
 
 img.center{

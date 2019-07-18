@@ -57,13 +57,13 @@ $(document).ready(function() {
   const renderTweets = function(userData) {
     $('.tweets-container').empty();
     for (const t of userData) {
-      $('.tweets-container').append(createTweetElement(t));
+      $('.tweets-container').prepend(createTweetElement(t));
 
     }
   }
 
   const validateForm = (form) => {
-    return form || form.length < 10 ? false : true;
+    return form || form.length < 140 ? true : false;
   }
 
   $('.tweet-form').submit((events) => {
@@ -75,6 +75,13 @@ $(document).ready(function() {
     } else {
       alert('bad input')
     }
+  })
+
+  $('.toggleTweetBox').click(() => {
+    console.log('clicked')
+    $(".stickyTweet").toggle("slow", function() {
+
+    });
   })
 
   const loadTweets = function() {

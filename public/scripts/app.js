@@ -77,13 +77,12 @@ $(document).ready(function() {
     }
   })
 
+  //function new-tweet
   $('.toggleTweetBox').click(() => {
     console.log('clicked')
     $(".stickyTweet").toggle("slow", function() {
-
     });
   })
-
   const loadTweets = function() {
     $.getJSON('/tweets')
       .done((arrayOfPosts) => {

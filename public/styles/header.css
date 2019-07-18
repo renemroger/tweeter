@@ -11,12 +11,13 @@
 }
 
 .glyphicon-menu-down{
+  color: orange;
   position: relative;
   display: inline;
   left: -50%;
 }
 
-.toggleTweetBox{
+.hideButton{
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;

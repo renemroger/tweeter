@@ -13,8 +13,8 @@ nav{
 .toTop {
   color: blueviolet;
   position: fixed; 
-  bottom:0%;
-  right: 30em;
+  bottom: 0;
+  right: 23vw;
   transform: scale(3);
   visibility: hidden;
   background-color: none; 

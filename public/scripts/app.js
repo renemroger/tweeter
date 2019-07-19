@@ -63,26 +63,32 @@ $(document).ready(function() {
   }
 
   const validateForm = (form) => {
-    return form || form.length < 140 ? true : false;
+    console.log(form.length);
+    return form.length > 145 ? false : true;
   }
 
   $('.tweet-form').submit((events) => {
+    const $formData = $('.tweet-form').serialize();
     events.preventDefault();
-    if (validateForm($('.tweet-form').serialize())) {
+    if ($formData && validateForm($formData)) {
       $.post('/tweets', $('.tweet-form').serialize(), (newPost) => {
+        $('.counter').text('140');
+        $('.tweet-form').trigger("reset")
         loadTweets();
       });
     } else {
-      alert('bad input')
+      alert('Too many characters')
     }
   })
 
   //function new-tweet
-  $('.toggleTweetBox').click(() => {
-    console.log('clicked')
+  const toogleTweetBox = function() {
     $(".stickyTweet").toggle("slow", function() {
     });
-  })
+  }
+
+  $('.toggleTweetBox').click(toogleTweetBox)
+
   const loadTweets = function() {
     $.getJSON('/tweets')
       .done((arrayOfPosts) => {
@@ -92,16 +98,5 @@ $(document).ready(function() {
         console.log(error);
       });
   }
-
   loadTweets();
-
 });
-
-
-
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-

@@ -1,14 +1,16 @@
 
 .mainHeader{
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 1.5rem;
+  margin: 6rem;
   height: 400px;
-  width: 100%;
+  width: 40%;
   font-family: 'Bungee',sans-serif;
   font-size: 24px;
   background-color: #d89820;
   background-image: url('../images/cardboard.png');
 }
+
 
 .glyphicon-menu-down{
   color: orange;
@@ -40,4 +42,14 @@ img.center{
   position: relative;
   left: 50%;
   margin-left: -128px;
+}
+
+@media screen and (max-width: 1300px) {
+
+  .mainHeader{
+   margin-left: 0;
+    width: 100%;
+    margin-bottom:6rem;
+    padding-bottom:0;
+  }
 }

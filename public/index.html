@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -23,9 +24,13 @@
 
   <!-- External JS -->
   <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/app.js"></script>
+  <script src="./scripts/composer-char-counter.js"></script>
+  <script src="./scripts/composer.js"></script>
 </head>
 
 <body>
@@ -33,29 +38,22 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
+    <button class="floatRight hideButton toggleTweetBox">
+      <p><span class="red"> Write </span>a new Tweet</p>
+      <i class="floatRight 	glyphicon glyphicon-menu-down"> </i>
+    </button>
   </nav>
   <div class="container">
     <header class='mainHeader'>
       <div>
-        <button class="floatRight hideButton toggleTweetBox">
-          <p><span class="red"> Write </span>a new Tweet</p>
-          <i class="floatRight 	glyphicon glyphicon-menu-down"> </i>
-        </button>
         <img class="center" src="/images/profile-hex.png">
       </div>
-
       <div>
         <h2 class="center">My Name</h2>
       </div>
     </header>
-
     <!-- Page-specific (main) content here -->
     <main>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
-      <script src="./scripts/composer-char-counter.js"></script>
-      <script src="./scripts/composer.js"></script>
-
       <section class="new-tweet">
         <div class="stickyTweet">
           <h2>Compose Tweet</h2>
@@ -67,17 +65,13 @@
             </form>
           </div>
         </div>
-
-        <section class="tweets-container">
-
-        </section>
+        <section class="tweets-container"></section>
       </section>
-      <button class="toTop hideButton">
-        <i class="glyphicon glyphicon glyphicon-upload"> </i>
-      </button>
     </main>
+    <button class="toTop hideButton">
+      <i class="glyphicon glyphicon glyphicon-upload"> </i>
+    </button>
   </div>
-
 </body>
 
 </html>

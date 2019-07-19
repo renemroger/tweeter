@@ -22,3 +22,7 @@ This repository is the starter code for the project: Students will fork and clon
     "moment": "^2.24.0"
   },
 ```
+
+## ScreenShots
+
+!['screnshot of tweets']

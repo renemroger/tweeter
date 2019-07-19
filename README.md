@@ -25,4 +25,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## ScreenShots
 
-!['screnshot of tweets']
+!['screnshot of tweets'](https://github.com/renemroger/tweeter/blob/master/docs/pic01.png)
+!['screnshot of compose box'](https://github.com/renemroger/tweeter/blob/master/docs/Screenshot%20from%202019-07-18%2017-42-26.png)
+!['screnshot of tweets mobile'](https://github.com/renemroger/tweeter/blob/master/docs/Screenshot%20from%202019-07-18%2017-43-20.png)
+

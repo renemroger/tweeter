@@ -1,31 +1,6 @@
 
 $(document).ready(function() {
 
-  const userData = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1563518677227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
   const createTweetElement = (data) => {
     const $article = $('<article>').addClass('tweet');
 
@@ -41,9 +16,9 @@ $(document).ready(function() {
     const $tweetText = $('<p>').addClass('tweet-text').text(`${data.content.text}`);
     const $myFooter = $('<footer>').addClass('tweet-footer');
 
-    const $iconOne = $('<i>').addClass('glyphicon glyphicon-flag floatRight');
-    const $iconTWo = $('<i>').addClass('glyphicon glyphicon-comment floatRight');
-    const $iconThree = $('<i>').addClass('glyphicon glyphicon-thumbs-up floatRight');
+    const $iconOne = $('<i>').addClass('glyphicon glyphicon-flag hoverToggle floatRight');
+    const $iconTWo = $('<i>').addClass('glyphicon glyphicon-comment hoverToggle floatRight');
+    const $iconThree = $('<i>').addClass('glyphicon glyphicon-thumbs-up hoverToggle floatRight');
     const $createdAt = $('<span>').text(`${moment(new Date(data.created_at)).fromNow()}`);
 
     $myHeader.append($headerContentP, $avatarIcon, $idSpan);
@@ -63,21 +38,38 @@ $(document).ready(function() {
   }
 
   const validateForm = (form) => {
-    console.log(form.length);
     return form.length > 145 ? false : true;
   }
+
+  $('#apply-form input').blur(function() {
+    if (!$(this).val()) {
+      $(this).parents('p').addClass('warning');
+    }
+  });
+
 
   $('.tweet-form').submit((events) => {
     const $formData = $('.tweet-form').serialize();
     events.preventDefault();
-    if ($formData && validateForm($formData)) {
+    let isFormValid = true;
+    $('.tweet-form').each(function() {
+      if ($.trim($(this).val()).length == 0) {
+        $('.counter').text('140');
+        $('.tweet-form').trigger("reset")
+        loadTweets();
+        console.log('invalid');
+        isFormValid = false;
+      }
+    });
+
+    if ($formData && validateForm($formData) && isFormValid) {
       $.post('/tweets', $('.tweet-form').serialize(), (newPost) => {
         $('.counter').text('140');
         $('.tweet-form').trigger("reset")
         loadTweets();
       });
     } else {
-      alert('Too many characters')
+      alert('Invalid Input')
     }
   })
 

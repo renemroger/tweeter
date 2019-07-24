@@ -47,3 +47,11 @@ textarea{
   font-weight: bold;
   margin-bottom: 0.5em;
 }
+
+.bad-input{
+  text-align: center;
+  display:none;
+  border: 4px solid;
+  color:red;
+
+}

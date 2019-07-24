@@ -47,15 +47,15 @@ $(document).ready(function() {
     }
   });
 
-
   $('.tweet-form').submit((events) => {
     const $formData = $('.tweet-form').serialize();
     events.preventDefault();
     let isFormValid = true;
     $('.tweet-form').each(function() {
-      if ($.trim($(this).val()).length == 0) {
+
+      if ($('.tweet-form').find('textarea').val().trim().length == 0) {
         $('.counter').text('140');
-        $('.tweet-form').trigger("reset")
+        $('.tweet-form').trigger("reset");
         loadTweets();
         console.log('invalid');
         isFormValid = false;
@@ -69,7 +69,7 @@ $(document).ready(function() {
         loadTweets();
       });
     } else {
-      alert('Invalid Input')
+      $('.bad-input').css("display", "block");
     }
   })
 
